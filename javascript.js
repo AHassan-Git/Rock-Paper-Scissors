@@ -6,6 +6,7 @@ function playGame() {
   let numberOfRounds = prompt("How many rounds do you wanna play? ");
   let HumanScore = 0;
   let MachineScore = 0;
+  let Ties = 0;
 
   //loop over for each round
   for(let i=0; i < numberOfRounds; i++){
@@ -22,8 +23,9 @@ function playGame() {
 
 
     if (HumanAnswer === MachineAnswer) {
+      Ties++;
       console.log(`Human: ${HumanAnswer}, Machine: ${MachineAnswer}`);
-      console.log(`Current Score: Human(${HumanScore}) Machine(${MachineScore})`)
+      console.log(`Current Score: Human(${HumanScore}) Machine(${MachineScore}) Ties(${Ties})`)
       console.log(`Result: It's a tie!`);
     } else if (
       (HumanAnswer === "rock" && MachineAnswer === "scissors") ||
@@ -32,7 +34,7 @@ function playGame() {
     ) {
       HumanScore++;
       console.log(`Human: ${HumanAnswer}, Machine: ${MachineAnswer}`);
-      console.log(`Current Score: Human(${HumanScore}) Machine(${MachineScore})`)
+      console.log(`Current Score: Human(${HumanScore}) Machine(${MachineScore}) Ties(${Ties})`)
       console.log("Result: You Win!");
     } else if (
       (HumanAnswer === "rock" && MachineAnswer === "paper") ||
@@ -41,7 +43,7 @@ function playGame() {
     ) {
       MachineScore++;
       console.log(`Human: ${HumanAnswer}, Machine: ${MachineAnswer}`);
-      console.log(`Current Score: Human(${HumanScore}) Machine(${MachineScore})`)
+      console.log(`Current Score: Human(${HumanScore}) Machine(${MachineScore}) Ties(${Ties})`)
       console.log("Result: You Lose!");
     }
   
@@ -50,7 +52,7 @@ function playGame() {
 
   //final score
   console.log(`--------------Final Score---------------`);
-  console.log(`Human(${HumanScore}) Machine(${MachineScore})`)
+  console.log(`Human(${HumanScore}) Machine(${MachineScore}) Ties(${Ties})`)
   if(HumanScore > MachineScore){
     console.log("You Win!!")}
   else if(HumanScore === MachineScore){
